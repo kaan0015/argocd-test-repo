@@ -1,13 +1,15 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Service
 metadata:
-    labels:
+  labels:
     app: nginx
-   name:nginx-service
+   name: nginx-service
+   namespace: default
 spec:
   ports:
   -port: 80
-  targetPort: 80
- selector:
+   protocol: TCP
+   targetPort: 80
+  selector:
     app: nginx
-    type: NodePort
+  type: NodePort
