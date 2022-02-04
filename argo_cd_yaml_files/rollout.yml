@@ -12,7 +12,7 @@ spec:
   strategy:
     blueGreen:
       activeService: nginx-service
-      previewServie: nginx-service
+      previewService: nginx-service-preview
   template:
     metadata:
       labels:
