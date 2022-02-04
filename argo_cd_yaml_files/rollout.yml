@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  labels:
+    app: nginx
+  name: nginx-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  strategy:
+    blueGreen:
+      activeService: nginx-service
+      previewService: nginx-service
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+        containers:
+        - image: nginx
+          name: nginx
