@@ -22,7 +22,7 @@ spec:
         containers:
         - image: nginx
           name: nginx
-       syncPolicy:
+        syncPolicy:
           automated:
           prune: true
           allowEmpty: true
