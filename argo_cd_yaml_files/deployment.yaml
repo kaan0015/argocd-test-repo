@@ -13,11 +13,6 @@ spec:
     metadata:
       labels:
         app: nginx
-  syncPolicy:
-    automated:
-      prune: true
-      allowEmpty: true
-      selfHeal: true
     spec:
         containers:
         - image: nginx
