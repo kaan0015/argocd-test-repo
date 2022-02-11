@@ -16,7 +16,7 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
-        url: www.example.com
+        url: localhost
       events:
         - close
         - merge
