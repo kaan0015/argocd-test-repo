@@ -4,30 +4,33 @@ metadata:
   name: mr-undeploy
 spec:
   dependencies:
-    - name: mr-close
-      eventSourceName: github
-      eventName: example
-      filters:
-        data:
-          - path: body.object_attributes.action
-            type: string
-            value:
-              - "close"
-              - "merge"
+  - name: mr-close
+    eventSourceName: github
+    eventName: close
+    filters:
+      data:
+      - path: body.object_attributes.action
+        type: string
+        value:
+        - "close"
+        - "merge"
   triggers:
-    - template:
-        conditions: "mr-close"
-        name: mr-undeploy
-        k8s:
-        operation: delete 
+  - template:
+      conditions: "mr-close"
+      name: mr-undeploy
+      k8s:
+        operation: delete
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
             kind: Application
             metadata:
-              name: asdf
+              name: dyn-tmpl
+              namespace: argocd
         parameters:
         - src:
             dependencyName: mr-close
             dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
           dest: metadata.name
+      retryStrategy:
+        steps: 3
