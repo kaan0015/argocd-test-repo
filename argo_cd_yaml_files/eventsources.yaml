@@ -20,9 +20,5 @@ spec:
         - close
         - merge
         - "*"
-       apiToken:
-        name: agro_cd_token2
-        key: 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
       enableSSLVerification: true
-      gitlabBaseURL: https://gitlab.com
       deleteHookOnFinish: true
