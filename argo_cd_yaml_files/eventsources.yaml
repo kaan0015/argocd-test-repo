@@ -8,21 +8,15 @@ spec:
       - name: example
         port: 12000
         targetPort: 12000
-      - name: example-without-api-credentials
-        port: 13000
-        targetPort: 13000
   github:
     example:
-      repositories:
-        - owner: kaan0015
-          names:
-            - argocd-test-repo
-            - argo_cd_yaml_files
+      projects:
+        - "kaan0015/argocd-test-repo"
       webhook:
         endpoint: /push
         port: "12000"
         method: POST
-        url: localhost
+        url: www.example.com
       events:
         - close
         - merge
