@@ -29,5 +29,5 @@ spec:
         parameters:
         - src:
             dependencyName: mr-close
-            dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
+            dataTemplate: rpc error: code = Unknown desc = Unable to resolve 'yeni' to a commit SHA
           dest: metadata.name
