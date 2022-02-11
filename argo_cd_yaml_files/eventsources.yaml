@@ -29,7 +29,7 @@ spec:
         - "*"
       webhookSecret:
         name: webhook.github.secret
-        key:fenerbahce
+        key: fenerbahce
       insecure: true
       active: true
       contentType: "json"
