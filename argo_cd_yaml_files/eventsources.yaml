@@ -29,7 +29,7 @@ spec:
         - "*"
       webhookSecret:
         name: https://github.com/kaan0015/argocd-test-repo.git
-        key: fenerbahce
+        key: enerbahce
       insecure: true
       active: true
       contentType: "json"
