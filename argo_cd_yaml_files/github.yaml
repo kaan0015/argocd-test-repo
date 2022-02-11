@@ -1,10 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: github
+  name: mr-undeploy
 spec:
-  template:
-    serviceAccountName: operate-workflow-sa
   dependencies:
     - name: mr-close
       eventSourceName: github
@@ -23,7 +21,7 @@ spec:
   triggers:
     - template:
         conditions: "mr-close"
-        name: github
+        name: mr-undeploy
         k8s:
         operation: delete
         source:
