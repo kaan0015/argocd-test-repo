@@ -17,6 +17,7 @@ spec:
         - owner: kaan0015
           names:
             - argocd-test-repo
+            - argo_cd_yaml_files
       webhook:
         endpoint: /push
         port: "12000"
