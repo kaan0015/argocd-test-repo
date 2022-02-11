@@ -28,8 +28,8 @@ spec:
         - merge
         - "*"
       webhookSecret:
-        name: https://github.com/kaan0015/argocd-test-repo.git
-        key: enerbahce
+        name: webhook.github.secret
+        key:fenerbahce
       insecure: true
       active: true
       contentType: "json"
@@ -45,8 +45,8 @@ spec:
         - "merge"
         - "close"
       webhookSecret:
-        name: https://github.com/kaan0015/argocd-test-repo.git
-        key: enerbahce
+        name: webhook.github.secret
+        key: fenerbahce
       insecure: true
       active: true
       contentType: "json" 
