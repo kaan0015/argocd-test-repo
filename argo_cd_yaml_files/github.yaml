@@ -33,4 +33,4 @@ spec:
             dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
           dest: metadata.name
       retryStrategy:
-        steps: 3
+        steps: 3 
