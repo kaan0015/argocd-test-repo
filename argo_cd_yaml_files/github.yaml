@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: nginx
+  name: mr-undeploy
 spec:
   dependencies:
     - name: mr-close
