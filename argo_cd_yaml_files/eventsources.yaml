@@ -5,12 +5,18 @@ metadata:
 spec:
   service:
     ports:
-      - port: 12000
+      - name: example
+        port: 12000
         targetPort: 12000
-  gitlab:
+      - name: example-without-api-credentials
+        port: 13000
+        targetPort: 13000
+   github:
     example:
-      projects:
-        - "kaan0015/argocd-test-repo"
+      repositories:
+        - owner: kaan0015
+          names:
+            - argocd-test-repo
       webhook:
         endpoint: /push
         port: "12000"
@@ -26,3 +32,19 @@ spec:
       insecure: true
       active: true
       contentType: "json"
+      
+    example-without-api-credentials:
+      owner: "kaan0015"
+      repository: "argocd-test-repo"
+      webhook:
+        endpoint: "/push"
+        port: "13000"
+        method: "POST"
+      events:
+        - "*"
+      webhookSecret:
+        name: github-access
+        key: fenerbahce
+      insecure: true
+      active: true
+      contentType: "json" 
