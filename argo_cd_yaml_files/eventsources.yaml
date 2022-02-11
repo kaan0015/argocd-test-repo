@@ -42,7 +42,8 @@ spec:
         port: "13000"
         method: "POST"
       events:
-        - "*"
+        - "merge"
+        - "close"
       webhookSecret:
         name: https://github.com/kaan0015/argocd-test-repo.git
         key: fenerbahce
