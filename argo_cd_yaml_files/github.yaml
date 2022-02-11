@@ -19,7 +19,7 @@ spec:
         conditions: "mr-close"
         name: mr-undeploy
         k8s:
-        operation: delete
+        operation: delete 
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
