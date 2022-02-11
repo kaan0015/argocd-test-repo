@@ -44,7 +44,7 @@ spec:
       events:
         - "*"
       webhookSecret:
-        name: github-access
+        name: https://github.com/kaan0015/argocd-test-repo.git
         key: fenerbahce
       insecure: true
       active: true
