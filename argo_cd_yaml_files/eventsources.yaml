@@ -22,7 +22,7 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
-        url: https://github.com/kaan0015/argocd-test-repo.git
+        url: localhost
       events:
         - close
         - merge
