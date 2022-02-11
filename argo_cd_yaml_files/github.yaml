@@ -12,10 +12,6 @@ spec:
           - path: argo_cd_yaml_files
             type: string
             value:
-              - pull_request
-          - path: body.action
-            type: string
-            value:
               - close
               - merge
   triggers:
