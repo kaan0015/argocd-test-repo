@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: EventSource
+metadata:
+  name: github
+spec:
+  service:
+    ports:
+      - port: 12000
+        targetPort: 12000
+  gitlab:
+    example:
+      projects:
+        - "kaan0015/argocd-test-repo"
+      webhook:
+        endpoint: /push
+        port: "12000"
+        method: POST
+        url: https://github.com/kaan0015/argocd-test-repo.git
+      events:
+        - close
+        - merge
+        - "*"
+       apiToken:
+        key: agro_cd_token
+        name: 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
+      enableSSLVerification: true
+      gitlabBaseURL: https://gitlab.com
+      deleteHookOnFinish: true
