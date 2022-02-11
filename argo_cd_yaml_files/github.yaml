@@ -29,5 +29,5 @@ spec:
         parameters:
         - src:
             dependencyName: mr-close
-            dataTemplate: rpc error: code = Unknown desc = Unable to resolve 'yeni' to a commit SHA
+            dataTemplate: "rpc error: code = Unknown desc = Unable to resolve 'yeni' to a commit SHA"
           dest: metadata.name
