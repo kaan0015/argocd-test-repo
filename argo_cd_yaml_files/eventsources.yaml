@@ -11,7 +11,7 @@ spec:
       - name: example-without-api-credentials
         port: 13000
         targetPort: 13000
-   github:
+  github:
     example:
       repositories:
         - owner: kaan0015
