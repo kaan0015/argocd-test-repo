@@ -20,5 +20,9 @@ spec:
         - close
         - merge
         - "*"
-      enableSSLVerification: true
-      deleteHookOnFinish: true
+      webhookSecret:
+        name: github-access
+        key: secret
+      insecure: true
+      active: true
+      contentType: "json"
