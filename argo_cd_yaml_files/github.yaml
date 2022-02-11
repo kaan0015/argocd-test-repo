@@ -9,11 +9,11 @@ spec:
       eventName: example
       filters:
         data:
-          - path: argo_cd_yaml_files
+          - path: body.object_attributes.action
             type: string
             value:
-              - close
-              - merge
+              - "close"
+              - "merge"
   triggers:
     - template:
         conditions: "mr-close"
@@ -23,11 +23,11 @@ spec:
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
-            kind: Workflow
+            kind: Application
             metadata:
-              name: github-
+              name: nginx
         parameters:
         - src:
             dependencyName: mr-close
-            dataTemplate: "{{ .Input.body.pull_request.number }}-{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
+            dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
           dest: metadata.name
