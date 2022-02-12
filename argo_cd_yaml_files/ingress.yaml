@@ -11,6 +11,6 @@ spec:
          path: "/"
          backend:
             service:
-              name: nginx-service
+              name: nginx-service-preview
               port:
                 number: 80
