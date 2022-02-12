@@ -8,8 +8,8 @@ spec:
     http:
       paths:
        - pathType: Prefix
-          path: "/"
-          backend:
+         path: "/"
+         backend:
             service:
             serviceName: nginx-service
             port:
