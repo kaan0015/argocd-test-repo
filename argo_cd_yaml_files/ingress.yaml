@@ -11,6 +11,6 @@ spec:
          path: "/"
          backend:
             service:
-            serviceName: nginx-service
-            port:
-              number: 80
+              name: nginx-service
+              port:
+                number: 80
