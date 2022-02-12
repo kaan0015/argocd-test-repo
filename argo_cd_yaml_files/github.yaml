@@ -28,7 +28,7 @@ spec:
               name: nginx-deployment
               namespace: nginx
         parameters:
-        - src:
+        - src: 
             dependencyName: mr-close
             dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
           dest: metadata.name
