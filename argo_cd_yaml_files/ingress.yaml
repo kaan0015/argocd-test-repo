@@ -12,4 +12,4 @@
        - path: /
          backend:
            serviceName: nginx-service
-           servicePort: 8080
+           servicePort: 80
