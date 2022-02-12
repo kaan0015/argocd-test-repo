@@ -1,9 +1,21 @@
-apiVersion: getambassador.io/v2
-kind: Mapping
+apiVersion: extensions/v1beta1
+kind: Ingress
 metadata:
-  name: argocd-server-ui
+  name: argo-http
   namespace: argocd
 spec:
-  host: argocd.example.com
-  prefix: /
-  service: argocd-server:443
+  rules:
+  - host: argocd.example.com
+    http:
+      paths:
+      - backend:
+          serviceName: argocd-server
+          servicePort: http
+  tls:
+  - hosts:
+    - argocd.example.com
+    secretName: argocd-secret
+status:
+  loadBalancer:
+    ingress:
+    - {}
