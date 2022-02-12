@@ -10,7 +10,7 @@ spec:
         targetPort: 12000
   github:
     example:
-      owner: "kaan0015"
+      owner: "kaan001"
       repository: "argocd-test-repo"
       webhook:
         endpoint: /push
