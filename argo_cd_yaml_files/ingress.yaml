@@ -1,13 +1,15 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: argo-http
-  namespace: argocd
-spec:
-  rules:
-  - host: my-app.com
-    http:
-      paths:
-      - backend:
-          serviceName: argocd-server
-          servicePort: http
+ apiVersion: networking.k8s.io/v1beta1
+ kind: Ingress
+ metadata:
+   name: example-ingress
+   annotations:
+     nginx.ingress.kubernetes.io/rewrite-target: /$1
+ spec:
+   rules:
+   - host: openfaas-figlet.local
+     http:
+       paths:
+       - path: /
+         backend:
+           serviceName: nginx-service
+           servicePort: 8080
