@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: argo-http
+  namespace: argocd
+spec:
+  rules:
+  - host: my-app.com
+    http:
+      paths:
+      - backend:
+          serviceName: argocd-server
+          servicePort: http
+status:
+  loadBalancer:
+    ingress:
+    - {}
