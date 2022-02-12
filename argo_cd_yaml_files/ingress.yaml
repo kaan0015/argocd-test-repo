@@ -11,10 +11,6 @@ spec:
       - backend:
           serviceName: argocd-server
           servicePort: http
-  tls:
-  - hosts:
-    - argocd.example.com
-    secretName: argocd-secret
 status:
   loadBalancer:
     ingress:
