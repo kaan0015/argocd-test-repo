@@ -7,6 +7,10 @@ spec:
   - host: argocd.example.com
     http:
       paths:
-      - backend:
-          serviceName: nginx-service
-          servicePort: 80
+       - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+            serviceName: nginx-service
+            port:
+              number: 80
