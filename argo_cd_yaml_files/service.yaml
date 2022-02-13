@@ -19,7 +19,7 @@ kind: Service
 metadata:
   labels:
     app: nginx
-  name: nginx-service-preview
+  name: github-eventsource-svc
   namespace: default
 spec:
   ports:
