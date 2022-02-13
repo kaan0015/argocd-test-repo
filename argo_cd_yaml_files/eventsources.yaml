@@ -19,6 +19,7 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
+        url: https://github-eventsource-svc.app.example.com
       events:
         - "*"
       apiToken:
@@ -28,5 +29,6 @@ spec:
          name: github-access
          key: ZmVuZXJiYWhjZQ==
       insecure: true
+      gitlabBaseURL: https://github.com
       active: true
       contentType: "json" 
