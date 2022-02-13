@@ -33,7 +33,7 @@ spec:
         type: string
         value:
           - master
-          - merge
+          - merge 
   triggers:
   - template:
       name: github-workflow-trigger
