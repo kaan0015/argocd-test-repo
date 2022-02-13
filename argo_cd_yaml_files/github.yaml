@@ -27,7 +27,7 @@ spec:
       - path: body.pull_request.state
         type: string
         value:
-          - open
+          - open 
           - merge
       - path: body.pull_request.base.ref
         type: string
