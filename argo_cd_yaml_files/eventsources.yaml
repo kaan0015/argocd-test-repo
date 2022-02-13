@@ -8,9 +8,6 @@ spec:
       - name: example
         port: 12000
         targetPort: 12000
-      - name: example-without-api-credentials
-        port: 13000
-        targetPort: 13000
   github: 
     example:
       owner: "kaan0015"
@@ -27,20 +24,3 @@ spec:
       insecure: true
       active: true
       contentType: "json"
-      
-    example-without-api-credentials:
-      owner: "kaan0015"
-      repository: "argocd-test-repo"
-      webhook:
-        endpoint: "/push"
-        port: "13000"
-        method: "POST"
-      events:
-        - "merge"
-        - "close"
-      webhookSecret:
-        name: webhook.github.secret
-        key: ZmVuZXJiYWhjZQ==
-      insecure: true
-      active: true
-      contentType: "json" 
