@@ -19,7 +19,7 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
-        url: http://argocd.example.com/
+        url: https://www.sozcu.com.tr/
       events:
         - close
         - merge
