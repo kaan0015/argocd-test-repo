@@ -2,15 +2,17 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: argocd-server-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
-  - host: argocd.example.com
+  - host: argocd.example.test
     http:
       paths:
        - pathType: Prefix
          path: "/"
          backend:
             service:
-              name: nginx-service-preview
+              name: github-eventsource-svc
               port:
                 number: 80 

@@ -26,8 +26,7 @@ spec:
             apiVersion: argoproj.io/v1alpha1
             kind: Application
             metadata:
-              name: asdf
-              namespace: argocd
+              name: nginx
         parameters:
         - src: 
             dependencyName: mr-close
