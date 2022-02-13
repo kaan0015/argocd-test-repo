@@ -28,7 +28,7 @@ spec:
               name: nginx
         parameters:
         - src: 
-            dependencyName: mr-close
+            dependencyName: mr-close 
             dataTemplate: "{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
           dest: metadata.name
       retryStrategy:
