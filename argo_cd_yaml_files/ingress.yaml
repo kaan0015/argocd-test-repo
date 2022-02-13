@@ -14,3 +14,6 @@ spec:
               name: nginx-service-preview
               port:
                 number: 80 
+                LoadBalancer:
+                ingress:
+                    - hostname: argocd.example.com
