@@ -27,7 +27,7 @@ spec:
             kind: Application
             metadata:
               name: asdf
-              namespace: argocd
+              namespace: argocd 
         parameters:
         - src: 
             dependencyName: mr-close
