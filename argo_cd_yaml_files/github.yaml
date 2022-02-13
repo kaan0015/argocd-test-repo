@@ -1,24 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: mr-undeploy
+  name: github
 spec:
+  template:
+    serviceAccountName: operate-workflow-sa
   dependencies:
   - name: mr-close
     eventSourceName: github
     eventName: example
     filters:
       data:
-      - path: body.object_attributes.action
+      - path: body.X-GitHub-Event
         type: string
         value:
-        - "close"
-        - "merge"
         - "*"
   triggers:
   - template:
-      conditions: "mr-close"
-      name: mr-undeploy
+      name: github-workflow-trigger
       k8s:
         operation: delete
         source:
@@ -30,7 +29,7 @@ spec:
         parameters:
         - src: 
             dependencyName: mr-close
-            dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
+            dataTemplate: dataTemplate: "{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
           dest: metadata.name
       retryStrategy:
         steps: 3
