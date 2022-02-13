@@ -17,8 +17,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: nginx
   name: github-eventsource-svc
   namespace: default
 spec:
@@ -26,9 +24,11 @@ spec:
   - port: 80
     name: http
     protocol: TCP
+    targetPort: 8080
   - port: 443
     name: https
     protocol: TCP
+    targetPort: 8080
   selector:
-    app: nginx
+    app: nginx-deployment
     
