@@ -8,6 +8,9 @@ spec:
       - name: example
         port: 12000
         targetPort: 12000
+      - name: example-without-api-credentials
+        port: 13000
+        targetPort: 13000
   github:
     example:
       owner: "kaan0015"
@@ -21,9 +24,12 @@ spec:
         - close
         - merge
         - "*"
+      apiToken:
+        name: github-access
+        key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
       webhookSecret:
         name: webhook.github.secret
-        key: fenerbahce
+        key: ZmVuZXJiYWhjZQ==
       insecure: true
       active: true
       contentType: "json"
@@ -40,7 +46,7 @@ spec:
         - "close"
       webhookSecret:
         name: webhook.github.secret
-        key: fenerbahce
+        key: ZmVuZXJiYWhjZQ==
       insecure: true
       active: true
       contentType: "json" 
