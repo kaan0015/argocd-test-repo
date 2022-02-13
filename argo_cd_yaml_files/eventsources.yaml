@@ -8,10 +8,7 @@ spec:
       - name: example
         port: 12000
         targetPort: 12000
-      - name: example-without-api-credentials
-        port: 13000
-        targetPort: 13000
-  github:
+  github: 
     example:
       owner: "kaan0015"
       repository: "argocd-test-repo"
@@ -19,34 +16,11 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
-        url: https://www.sozcu.com.tr/
       events:
-        - close
-        - merge
         - "*"
       apiToken:
         name: github-access
         key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
-      webhookSecret:
-        name: webhook.github.secret
-        key: ZmVuZXJiYWhjZQ==
       insecure: true
       active: true
       contentType: "json"
-      
-    example-without-api-credentials:
-      owner: "kaan0015"
-      repository: "argocd-test-repo"
-      webhook:
-        endpoint: "/push"
-        port: "13000"
-        method: "POST"
-      events:
-        - "merge"
-        - "close"
-      webhookSecret:
-        name: webhook.github.secret
-        key: ZmVuZXJiYWhjZQ==
-      insecure: true
-      active: true
-      contentType: "json" 
