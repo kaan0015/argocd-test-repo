@@ -27,8 +27,8 @@ spec:
     protocol: TCP
     targetPort: 80
   - port: 443
-    name: https
     protocol: TCP
+    targetPort: 443
   selector:
     app: nginx
   type: LoadBalancer
