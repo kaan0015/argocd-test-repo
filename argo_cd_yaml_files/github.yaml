@@ -15,6 +15,21 @@ spec:
         type: string
         value:
         - "*"
+      - path: body.action
+        type: string
+        value:
+          - opened
+          - edited
+          - reopened
+          - synchronize
+      - path: body.pull_request.state
+        type: string
+        value:
+          - open
+      - path: body.pull_request.base.ref
+        type: string
+        value:
+          - master
   triggers:
   - template:
       name: github-workflow-trigger
@@ -25,7 +40,7 @@ spec:
             apiVersion: argoproj.io/v1alpha1
             kind: Application 
             metadata:
-              name: nginx
+              name: asdf
         parameters:
         - src:   
             dependencyName: mr-close 
