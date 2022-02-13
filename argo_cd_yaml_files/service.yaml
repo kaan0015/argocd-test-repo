@@ -33,5 +33,5 @@ spec:
     app: nginx
   type: LoadBalancer
   externalIPs:
-  - 192.168.0.10
+  - 192.168.0.12
     
