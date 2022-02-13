@@ -19,17 +19,11 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
-        url: https://www.sozcu.com.tr/
       events:
-        - close
-        - merge
         - "*"
       apiToken:
         name: github-access
         key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
-      webhookSecret:
-        name: webhook.github.secret
-        key: ZmVuZXJiYWhjZQ==
       insecure: true
       active: true
       contentType: "json"
