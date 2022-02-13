@@ -26,6 +26,9 @@ spec:
   - port: 80
     protocol: TCP
     targetPort: 80
+  - port: 443
+    name: https
+    protocol: TCP
   selector:
     app: nginx
   type: LoadBalancer
@@ -33,3 +36,4 @@ status:
   loadBalancer:
     ingress:
     - ip: 192.0.2.127
+    
