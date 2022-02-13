@@ -15,6 +15,7 @@ spec:
         type: string
         value:
         - "*"
+        - merge
       - path: body.action
         type: string
         value:
@@ -22,14 +23,17 @@ spec:
           - edited
           - reopened
           - synchronize
+          - merge
       - path: body.pull_request.state
         type: string
         value:
           - open
+          - merge
       - path: body.pull_request.base.ref
         type: string
         value:
           - master
+          - merge
   triggers:
   - template:
       name: github-workflow-trigger
