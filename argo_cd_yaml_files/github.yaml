@@ -28,7 +28,7 @@ spec:
         type: string
         value:
           - open 
-          - merge
+          - merge 
       - path: body.pull_request.base.ref
         type: string
         value:
