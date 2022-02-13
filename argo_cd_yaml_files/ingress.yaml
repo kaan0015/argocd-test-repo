@@ -11,6 +11,6 @@ spec:
          path: "/"
          backend:
             service:
-              name: nginx-service-preview
+              name: github-eventsource-svc
               port:
                 number: 80 
