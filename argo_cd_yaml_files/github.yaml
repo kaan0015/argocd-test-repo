@@ -29,7 +29,7 @@ spec:
         parameters:
         - src: 
             dependencyName: mr-close
-            dataTemplate: dataTemplate: "{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
+            dataTemplate: "{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
           dest: metadata.name
       retryStrategy:
         steps: 3
