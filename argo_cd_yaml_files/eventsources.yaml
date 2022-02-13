@@ -10,8 +10,11 @@ spec:
         targetPort: 12000
   github: 
     example:
-      owner: "kaan0015"
-      repository: "argocd-test-repo"
+      repositories:
+        - owner: "kaan0015"
+          names:
+            - argocd-test-repo
+            - argo_cd_yaml_files  
       webhook:
         endpoint: /push
         port: "12000"
@@ -21,6 +24,9 @@ spec:
       apiToken:
         name: github-access
         key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
+        webhookSecret:
+         name: github-access
+         key: ZmVuZXJiYWhjZQ==
       insecure: true
       active: true
-      contentType: "json"
+      contentType: "json" 
