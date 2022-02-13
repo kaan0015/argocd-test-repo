@@ -15,4 +15,4 @@ spec:
             service:
               name: github-eventsource-svc
               port:
-                number: 80 
+                number: 8081 
