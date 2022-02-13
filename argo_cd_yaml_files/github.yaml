@@ -44,7 +44,8 @@ spec:
             apiVersion: argoproj.io/v1alpha1
             kind: Application 
             metadata:
-              name: asdf
+              name: dyn-tmpl
+              namespace: default
         parameters:
         - src:   
             dependencyName: mr-close 
