@@ -27,7 +27,7 @@ spec:
             metadata:
               name: nginx
         parameters:
-        - src: 
+        - src:  
             dependencyName: mr-close 
             dataKey: body.pull_request.title
             dataTemplate: "{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
