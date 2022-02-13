@@ -24,9 +24,9 @@ spec:
       apiToken:
         name: github-access
         key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
-       webhookSecret:
-        name: github-access
-        key: ZmVuZXJiYWhjZQ==
+        webhookSecret:
+         name: github-access
+         key: ZmVuZXJiYWhjZQ==
       insecure: true
       active: true
       contentType: "json"
