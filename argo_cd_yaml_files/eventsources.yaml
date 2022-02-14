@@ -16,7 +16,7 @@ spec:
         port: "12000"
         method: POST
       events:
-        - *
+        - "*"
       accessToken:
         key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
         name: github-access
