@@ -1,68 +1,34 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: github
+  name: mr-undeploy
 spec:
-  template:
-    serviceAccountName: operate-workflow-sa
   dependencies:
   - name: mr-close
     eventSourceName: github
-    eventName: example
+    eventName: microfast
     filters:
       data:
-      - path: body.X-GitHub-Event
+      - path: body.object_attributes.action
         type: string
         value:
-        - "*"
-        - merge
-      - path: body.action
-        type: string
-        value:
-          - opened
-          - edited
-          - reopened
-          - synchronize
-          - merge
-      - path: body.pull_request.state
-        type: string
-        value:
-          - open 
-          - merge 
-      - path: body.pull_request.base.ref
-        type: string
-        value:
-          - master
-          - merge 
+        - "close"
+        - "merge"
   triggers:
   - template:
-      name: github-workflow-trigger
+      conditions: "mr-close"
+      name: mr-undeploy
       k8s:
         operation: delete
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
-            kind: Application 
+            kind: Application
             metadata:
               name: dyn-tmpl
-              namespace: default
+              namespace: argocd
         parameters:
-        - src:   
-            dependencyName: mr-close 
-            dataKey: body.pull_request.title
-            dataTemplate: "{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
-          dest: spec.arguments.parameters.0.value
         - src:
             dependencyName: mr-close
-            dataKey: body.pull_request.number
-          dest: spec.arguments.parameters.1.value
-        - src:
-            dependencyName: mr-close
-            dataTemplate: "{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
-          dest: spec.arguments.parameters.2.value
-        - src:
-            dependencyName: mr-close
-            dataTemplate: "{{ .Input.body.pull_request.number }}-{{ .Input.body.pull_request.head.sha | substr 0 7 }}"
+            dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
           dest: metadata.name
-      retryStrategy:
-        steps: 3 
