@@ -15,6 +15,7 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
+        url: https://github-eventsource-svc.app.example.com
       events:
         - "*"
       accessToken:
