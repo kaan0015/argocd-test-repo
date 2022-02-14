@@ -31,4 +31,4 @@ spec:
     targetPort: 8080
   selector:
     app: nginx
-    
+  type: LoadBalancer 
