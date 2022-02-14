@@ -5,30 +5,24 @@ metadata:
 spec:
   service:
     ports:
-      - name: example
-        port: 12000
+      - port: 12000
         targetPort: 12000
-  github: 
-    example:
-      repositories:
-        - owner: "kaan0015"
-          names:
-            - argocd-test-repo
-            - argo_cd_yaml_files  
+  gitlab:
+    microfast:
+      projects:
+        - "kaan0015/argocd-test-repo"
       webhook:
         endpoint: /push
         port: "12000"
         method: POST
-        url: https://github-eventsource-svc.app.example.com
       events:
         - "*"
-      apiToken:
-        name: github-access
+      accessToken:
         key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
-        webhookSecret:
-         name: github-access
-         key: ZmVuZXJiYWhjZQ==
-      insecure: true
+        name: github-access
+      secretToken:
+        key: ZmVuZXJiYWhjZQ==
+        name: github-secret
+      enableSSLVerification: false
       gitlabBaseURL: https://github.com
-      active: true
-      contentType: "json" 
+      deleteHookOnFinish: false
