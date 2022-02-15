@@ -21,10 +21,10 @@ metadata:
   namespace: default
 spec:
   ports:
-  - port: 80
+  - port: 12000
     name: http
     protocol: TCP
-    targetPort: 8080
+    targetPort: 12000
   - port: 443
     name: https
     protocol: TCP
