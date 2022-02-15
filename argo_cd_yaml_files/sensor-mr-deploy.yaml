@@ -55,4 +55,4 @@ spec:
         - src:
             dependencyName: mr-open
             dataTemplate: "dyn-website-mr-{{ .Input.body.object_attributes.iid }}"
-          dest: spec.destination.namespace
+          dest: spec.destination.namespace 
