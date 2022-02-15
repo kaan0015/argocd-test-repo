@@ -7,23 +7,11 @@ spec:
     ports:
       - port: 12000
         targetPort: 12000
-  gitlab:
-    microfast:
-      projects:
-        - "kaan0015/argocd-test-repo"
-      webhook:
+    webhook:
         endpoint: /push
         port: "12000"
         method: POST
-        url: https://github.com/kaan0015/argocd-test-repo
-      events:
+        events:
         - "*"
-      accessToken:
-        key: Z2hwX2tEdk1SSHpsbUhZZmxPUXpkMEdpRWhUenNXV0V6czNza1QwTAo=
-        name: github-access
-      secretToken:
-        key: ZmVuZXJiYWhjZQ==
-        name: github-secret
-      enableSSLVerification: false
-      gitlabBaseURL: https://github.com/kaan0015/argocd-test-repo
-      deleteHookOnFinish: false
+    enableSSLVerification: false
+    deleteHookOnFinish: false
