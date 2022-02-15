@@ -12,10 +12,10 @@ spec:
       projects:
         - "kaan0015/argocd-test-repo"
       webhook:
-        endpoint: /
+        endpoint: /push
         port: "12000"
         method: POST
-        url: https://github-eventsource-svc.app.example.com
+        url: https://github.com/kaan0015/argocd-test-repo
       events:
         - "*"
       accessToken:
