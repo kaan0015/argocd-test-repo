@@ -11,7 +11,4 @@ spec:
         endpoint: /push
         port: "12000"
         method: POST
-        events:
-        - "*"
-    enableSSLVerification: false
-    deleteHookOnFinish: false
+ 
