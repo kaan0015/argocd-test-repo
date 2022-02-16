@@ -1,15 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: mr-undeploy
+  name: mr-undeploy 
 spec:
+  template:
+    serviceAccountName: argo-events-sa
   dependencies:
-  - name: mr-close
+  - name: payload
     eventSourceName: github
     eventName: example
   triggers:
   - template:
-      name: mr-close
+      name: payload
       k8s:
         group: ""
         version: v1
@@ -20,9 +22,9 @@ spec:
             apiVersion: v1
             kind: Pod
             metadata:
-              generateName: mr-close-
+              generateName: payload-
               labels:
-                app: mr-close
+                app: payload
             spec:
               containers:
               - name: hello
@@ -31,8 +33,7 @@ spec:
                 args: ["This is the message you sent me:\n", ""]
               restartPolicy: Never
         parameters:
-        - src:
-            dependencyName: mr-close
-            dataKey: body.message
-          dest: metadata.name
-          
+          - src:
+              dependencyName: payload
+              dataKey: body.message
+            dest: spec.containers.0.args.1
