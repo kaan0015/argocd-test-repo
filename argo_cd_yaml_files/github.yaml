@@ -12,16 +12,14 @@ spec:
       conditions: "mr-close"
       name: mr-undeploy
       k8s:
-        operation: create
+        operation: delete
         source:
           resource:
-            spec:
-              containers:
-              - name: hello
-                image: alpine
-                command: ["echo"]
-                args: ["This is the message you sent me:\n", ""]
-              restartPolicy: Never
+            apiVersion: argoproj.io/v1alpha1
+            kind: Application
+            metadata:
+              name: asdfff
+              namespace: argocd
         parameters:
         - src:
             dependencyName: mr-close
