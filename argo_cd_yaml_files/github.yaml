@@ -25,7 +25,7 @@ spec:
             apiVersion: argoproj.io/v1alpha1
             kind: Application
             metadata:
-              name: dyn-tmpl
+              name: asdfff
               namespace: argocd
         parameters:
         - src:
