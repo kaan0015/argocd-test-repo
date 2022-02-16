@@ -8,8 +8,8 @@ spec:
       - port: 12000
         targetPort: 12000
     webhook:
-      example:
+      github:
         endpoint: /push
         port: "12000"
-        method: POST
+        method: POST 
  

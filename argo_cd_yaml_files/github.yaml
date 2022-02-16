@@ -8,7 +8,7 @@ spec:
   dependencies:
   - name: payload
     eventSourceName: github
-    eventName: example
+    eventName: github
   triggers:
   - template:
       name: payload
