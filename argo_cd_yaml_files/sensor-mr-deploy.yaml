@@ -6,7 +6,7 @@ spec:
   dependencies:
   - name: mr-open
     eventSourceName: github
-    eventName: microfast
+    eventName: example
     filters:
       data:
       - path: body.object_attributes.action
