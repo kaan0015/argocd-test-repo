@@ -16,7 +16,7 @@ spec:
         group: ""
         version: v1
         resource: pods
-        operation: delete
+        operation: create
         source:
           resource:
             apiVersion: v1
