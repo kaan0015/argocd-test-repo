@@ -25,3 +25,4 @@ spec:
             dependencyName: mr-close
             dataKey: body.message
           dest: metadata.name
+          
