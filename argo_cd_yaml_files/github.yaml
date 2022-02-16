@@ -15,11 +15,13 @@ spec:
         operation: delete
         source:
           resource:
-            apiVersion: argoproj.io/v1alpha1
-            kind: Application
-            metadata:
-              name: asdfff
-              namespace: argocd
+            spec:
+              containers:
+              - name: hello
+                image: alpine
+                command: ["echo"]
+                args: ["This is the message you sent me:\n", ""]
+              restartPolicy: Never
         parameters:
         - src:
             dependencyName: mr-close
