@@ -12,7 +12,7 @@ spec:
       conditions: "mr-close"
       name: mr-undeploy
       k8s:
-        operation: delete
+        operation: create
         source:
           resource:
             spec:
