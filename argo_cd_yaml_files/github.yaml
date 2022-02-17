@@ -19,10 +19,8 @@ spec:
             apiVersion: v1
             kind: Application
             metadata:
-              generateName: payload-
-              labels:
-                app: payload
-              restartPolicy: Never
+              name: asdf
+              namespace: argocd
         parameters:
           - src:
               dependencyName: payload
