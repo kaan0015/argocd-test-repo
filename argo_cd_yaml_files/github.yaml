@@ -14,12 +14,13 @@ spec:
       name: payload
       k8s:
         operation: delete
-        resource: Application
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
             kind: Application
             metadata:
+              labels:
+                app.kubernetes.io/instance: asdf
               name: asdf
               namespace: argo-events
         parameters:
