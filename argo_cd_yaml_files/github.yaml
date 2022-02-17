@@ -28,3 +28,4 @@ spec:
               dependencyName: payload
               dataKey: body.message
             dest: metadata.name
+            operation: delete
