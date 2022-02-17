@@ -8,6 +8,10 @@ spec:
     namespace: argo-events
     server: https://kubernetes.default.svc
   project: default
+  source:
+    path: argo_cd_yaml_files/
+    repoURL: https://github.com/kaan0015/argocd-test-repo.git
+    targetRevision: yeni
   syncPolicy:
     automated:
       prune: true
