@@ -23,7 +23,7 @@ spec:
             kind: Application
             metadata:
               name: asdf
-              namespace: argo-events
+              namespace: argocd
         parameters:
           - src:
               dependencyName: payload
