@@ -14,12 +14,12 @@ spec:
       name: payload
       k8s:
         group: ""
-        version: apps/v1
+        version: argoproj.io/v1alpha
         resource: Application
         operation: delete
         source:
           resource:
-            apiVersion: apps/v1
+            apiVersion: argoproj.io/v1alpha
             kind: Application
             metadata:
               name: asdf
