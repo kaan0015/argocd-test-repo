@@ -14,5 +14,5 @@ spec:
     targetRevision: yeni
   syncPolicy:
     syncOptions:
-    - PrunePropagationPolicy: foreground
+    - PrunePropagationPolicy=foreground
 
