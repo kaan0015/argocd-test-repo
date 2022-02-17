@@ -15,7 +15,6 @@ spec:
       k8s:
         group: ""
         version: argoproj.io/v1alpha
-        resource: Application
         operation: delete
         source:
           resource:
