@@ -20,10 +20,10 @@ spec:
             apiVersion: argoproj.io/v1alpha1
             kind: Application
             metadata:
-              name: nginx
+              name: asdf
               namespace: argo-events
         parameters:
           - src:
               dependencyName: payload
               dataKey: body.message
-            dest: spec.containers.0.args.1
+            dest: metadata.name
