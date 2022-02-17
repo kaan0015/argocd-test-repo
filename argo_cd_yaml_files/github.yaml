@@ -25,4 +25,4 @@ spec:
           - src:
               dependencyName: payload
               dataKey: body.message
-            dest: spec.containers.0.args.1
+            dest: metadata.name
