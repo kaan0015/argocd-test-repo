@@ -14,6 +14,7 @@ spec:
       name: payload
       k8s:
         operation: delete
+        resource: Applications
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
@@ -27,5 +28,4 @@ spec:
           - src:
               dependencyName: payload
               dataKey: body.message
-            dest: metadata.name
-            operation: append
+            dest: spec.containers.0.args.1
