@@ -16,10 +16,10 @@ spec:
         operation: delete
         source:
           resource:
-            apiVersion: argoproj.io/v1alpha1
-            kind: Application
+            apiVersion: apps/v1
+            kind: Deployment
             metadata:
-              name: asdf
+              name: nginx-deployment
               namespace: argo-events
         parameters:
           - src:
