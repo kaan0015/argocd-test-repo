@@ -4,7 +4,7 @@ metadata:
   name: mr-deploy
 spec:
   template:
-    serviceAccountName: operate-workflow-sa
+    serviceAccountName: argo-events-sa
   dependencies:
   - name: mr-open
     eventSourceName: github
