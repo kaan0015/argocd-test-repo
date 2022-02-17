@@ -14,13 +14,13 @@ spec:
       name: payload
       k8s:
         group: ""
-        version: apps/v1
-        resource: Deployment
+        version: argoproj.io/v1alpha1
+        resource: Application
         operation: delete
         source:
           resource:
-            apiVersion: apps/v1
-            kind: Deployment
+            apiVersion: argoproj.io/v1alpha1
+            kind: Application
             metadata:
               name: asdf
               namespace: argo-events
