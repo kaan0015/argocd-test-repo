@@ -3,18 +3,12 @@ kind: Sensor
 metadata:
   name: mr-deploy
 spec:
+  template:
+    serviceAccountName: operate-workflow-sa
   dependencies:
   - name: mr-open
     eventSourceName: github
     eventName: example
-    filters:
-      data:
-      - path: body.object_attributes.action
-        type: string
-        value:
-        - "open"
-        - "reopen"
-        - "update"
   triggers:
   - template:
       conditions: "mr-open"
