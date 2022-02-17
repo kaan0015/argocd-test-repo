@@ -15,14 +15,14 @@ spec:
       k8s:
         group: ""
         version: argoproj.io/v1alpha1
-        resource: application
+        resource: Application
         operation: delete
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
-            kind: application
+            kind: Application
             metadata:
-              name: asdf
+              name: hello
               namespace: argo-events
         parameters:
           - src:
