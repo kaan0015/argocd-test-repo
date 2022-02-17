@@ -17,9 +17,9 @@ spec:
         source:
           resource:
             apiVersion: argoproj.io/v1alpha
-            kind: Application
+            kind: Deployment
             metadata:
-              name: asdff
+              name: nginx-deployment
               namespace: argo-events
         parameters:
           - src:
