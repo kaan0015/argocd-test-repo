@@ -13,13 +13,16 @@ spec:
   - template:
       name: payload
       k8s:
+        group: ""
+        version: v1
+        resource: Application
         operation: delete
         source:
           resource:
-            apiVersion: argoproj.io/v1alpha1
+            apiVersion: v1
             kind: Application
             metadata:
-              name: nginx
+              name: asdf
               namespace: argocd
         parameters:
           - src:
