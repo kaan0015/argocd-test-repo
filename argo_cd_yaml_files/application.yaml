@@ -12,3 +12,7 @@ spec:
     path: argo_cd_yaml_files/
     repoURL: https://github.com/kaan0015/argocd-test-repo.git
     targetRevision: yeni
+  syncPolicy:
+    syncOptions:
+    - PrunePropagationPolicy: foreground
+
