@@ -22,7 +22,7 @@ spec:
             apiVersion: argoproj.io/v1alpha
             kind: Application
             metadata:
-              name: asdff
+              name: asdf
               namespace: argo-events
         parameters:
           - src:
