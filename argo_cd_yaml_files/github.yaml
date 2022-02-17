@@ -13,8 +13,6 @@ spec:
   - template:
       name: payload
       k8s:
-        group: ""
-        version: argoproj.io/v1alpha
         operation: delete
         source:
           resource:
