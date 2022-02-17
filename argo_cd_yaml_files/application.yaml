@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: asdf
-  namespace: argocd
+  namespace: argo-events
 spec:
   destination:
     namespace: argo-events
