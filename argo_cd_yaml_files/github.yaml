@@ -15,14 +15,14 @@ spec:
       k8s:
         group: ""
         version: apps/v1
-        resource: Application
+        resource: Deployment
         operation: delete
         source:
           resource:
             apiVersion: apps/v1
-            kind: Application
+            kind: Deployment
             metadata:
-              name: asdf
+              name: nginx-deployment
               namespace: argo-events
         parameters:
           - src:
