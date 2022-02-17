@@ -16,7 +16,7 @@ spec:
         operation: delete
         source:
           resource:
-            apiVersion: argoproj.io/v1alpha
+            apiVersion: apps/v1
             kind: Deployment
             metadata:
               name: nginx-deployment
