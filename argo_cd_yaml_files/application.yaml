@@ -2,7 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: asdf
-  namespace: argo-events
 spec:
   destination:
     namespace: argo-events
@@ -12,7 +11,3 @@ spec:
     path: argo_cd_yaml_files/
     repoURL: https://github.com/kaan0015/argocd-test-repo.git
     targetRevision: yeni
-  syncPolicy:
-    syncOptions:
-    - PrunePropagationPolicy=foreground
-
