@@ -14,7 +14,7 @@ spec:
       name: payload
       k8s:
         operation: delete
-        resource: Applications
+        resource: Application
         source:
           resource:
             apiVersion: argoproj.io/v1alpha1
