@@ -24,6 +24,7 @@ spec:
               namespace: argo-events
           targetRevision: yeni
           project: default
+          server: https://kubernetes.default.svc
         parameters:
           - src:
               dependencyName: payload
