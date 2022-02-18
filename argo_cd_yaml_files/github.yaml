@@ -23,6 +23,7 @@ spec:
               name: asdf
               namespace: argo-events
           targetRevision: yeni
+          project: default
         parameters:
           - src:
               dependencyName: payload
