@@ -18,4 +18,4 @@ spec:
         - image: nginx
           name: nginx
           ports:
-          - containerPort: 8001
+          - containerPort: 12000
