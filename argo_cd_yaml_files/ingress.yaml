@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   entryPoints:
-    - https
+    - web
   routes:
       # Rules to match the loginUrl and redirectUrl can be added into
       # your current router.
