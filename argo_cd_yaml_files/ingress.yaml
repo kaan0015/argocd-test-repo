@@ -14,3 +14,25 @@ spec:
                 name: github-eventsource-svc
                 port:
                   number: 12000
+                  
+                  
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: example-ingress
+  namespace: default
+spec:
+  entryPoints:
+    - https
+  routes:
+      # Rules to match the loginUrl and redirectUrl can be added into
+      # your current router.
+    - match: Host(`traefik.localhost`) && (PathPrefix(`/enter`) || PathPrefix(`/api`))
+      kind: Rule
+      services:
+        - kind: Service
+          name: github-eventsource-svc
+          port: 12000
+          namespace: default
+          
+  tls: {}
