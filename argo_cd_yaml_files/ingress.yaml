@@ -5,16 +5,14 @@ metadata:
   namespace: default
 spec:
   entryPoints:
-    - http
+    - webb
   routes:
       # Rules to match the loginUrl and redirectUrl can be added into
       # your current router.
     - match: Host(`traefik.localhost`) && (PathPrefix(`/enter`) || PathPrefix(`/api`))
       kind: Rule
       services:
-        - kind: Service
+        - kind: api@internal2
           name: github-eventsource-svc
-          port: 12000
-          namespace: default
           
   tls: {}
