@@ -16,3 +16,4 @@ spec:
   selector:
     app: nginx
     eventsource-name: github
+    type: LoadBalancer 
