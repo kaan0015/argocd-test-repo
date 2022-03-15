@@ -13,4 +13,4 @@ spec:
               service:
                 name: github-eventsource-svc
                 port:
-                  number: 8001
+                  number: 12000
