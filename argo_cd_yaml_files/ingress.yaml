@@ -14,7 +14,7 @@ spec:
       services:
         - kind: Service
           name: github-eventsource-svc
-          port: 443
+          port: 12000
           namespace: default
           
   tls: {}
