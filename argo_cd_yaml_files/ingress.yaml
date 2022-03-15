@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   entryPoints:
-    - web
+    - https
   routes:
       # Rules to match the loginUrl and redirectUrl can be added into
       # your current router.
@@ -14,7 +14,7 @@ spec:
       services:
         - kind: Service
           name: github-eventsource-svc
-          port: 12000
+          port: 443
           namespace: default
           
   tls: {}
