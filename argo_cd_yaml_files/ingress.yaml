@@ -12,7 +12,7 @@ spec:
     - match: Host(`traefik.localhost`) && (PathPrefix(`/enter`) || PathPrefix(`/api`))
       kind: Rule
       services:
-        - kind: api@internal2
+        - kind: Service
           name: github-eventsource-svc
           
   tls: {}
